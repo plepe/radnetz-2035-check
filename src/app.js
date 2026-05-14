@@ -23,7 +23,10 @@ todoLayer = new LeafletGeowiki({
 }).addTo(map)
 
 // create link to overpass database (this could be a file too, e.g. data.osm or data.osm.bz2)
-const doneData = new GeowikiAPI('https://radnetz-dashboard.radlobby.at/bauprojekte?type=1&title=&jahr=&field_bilanzjahr_value=&tags_id=Stadtentwicklungsplan+%2F+STEP+2035+%281538%29&field_bezirk_target_id=All&field_status_target_id=All&field_verschoben=All&field_radlobby_prioritaet_value=All&field_netz_id=All&field_route_target_id=All')
+const doneData = new GeowikiAPI('https://radnetz-dashboard.radlobby.at/bauprojekte.geojson?type=1&title=&jahr=&field_bilanzjahr_value=&tags_id=Stadtentwicklungsplan%20%2F%20STEP%202035%20%281538%29&field_bezirk_target_id=All&field_status_target_id=All&field_verschoben=All&field_radlobby_prioritaet_value=All&field_netz_id=All&field_route_target_id=All',{
+  isFile: 'true',
+  fileFormat: 'GeoJSON'
+})
 
 // Initialize Geowiki viewer
 doneLayer = new LeafletGeowiki({
