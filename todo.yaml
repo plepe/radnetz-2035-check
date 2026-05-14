@@ -8,7 +8,7 @@ feature:
   title: |-
     TODO
   body: |-
-    {{ geometry }}
+    <a href='javascript:navigator.clipboard.writeText("{{ geometry }}")'>Geometrie in Zwischenablage kopieren</a>
 panes:
   todo:
     zIndex: 401
