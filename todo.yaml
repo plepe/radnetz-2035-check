@@ -1,0 +1,14 @@
+query:
+  0: (node;way;)
+feature:
+  style:
+    color: black
+    width: 8
+    pane: todo
+  title: |-
+    TODO
+  body: |-
+    {{ geometry }}
+panes:
+  todo:
+    zIndex: 401

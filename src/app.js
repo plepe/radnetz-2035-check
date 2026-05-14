@@ -1,5 +1,6 @@
 const GeowikiAPI = require('@geowiki-net/geowiki-api')
 const LeafletGeowiki = require('@geowiki-net/leaflet-geowiki/minimal')
+LeafletGeowiki.modules.push(require('@geowiki-net/leaflet-geowiki/src/panes'))
 
 var options = {}
 
@@ -13,11 +14,20 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // create link to overpass database (this could be a file too, e.g. data.osm or data.osm.bz2)
-const geowikiAPI = new GeowikiAPI('https://radnetz-dashboard.radlobby.at/bauprojekte?type=1&title=&jahr=&field_bilanzjahr_value=&tags_id=Stadtentwicklungsplan+%2F+STEP+2035+%281538%29&field_bezirk_target_id=All&field_status_target_id=All&field_verschoben=All&field_radlobby_prioritaet_value=All&field_netz_id=All&field_route_target_id=All')
+const todoData = new GeowikiAPI('Leuchtuerme2035.geojson')
 
 // Initialize Geowiki viewer
-var geowiki = new LeafletGeowiki({
-  geowikiAPI,
+todoLayer = new LeafletGeowiki({
+  geowikiAPI: todoData,
+  styleFile: 'todo.yaml',
+}).addTo(map)
+
+// create link to overpass database (this could be a file too, e.g. data.osm or data.osm.bz2)
+const doneData = new GeowikiAPI('https://radnetz-dashboard.radlobby.at/bauprojekte?type=1&title=&jahr=&field_bilanzjahr_value=&tags_id=Stadtentwicklungsplan+%2F+STEP+2035+%281538%29&field_bezirk_target_id=All&field_status_target_id=All&field_verschoben=All&field_radlobby_prioritaet_value=All&field_netz_id=All&field_route_target_id=All')
+
+// Initialize Geowiki viewer
+doneLayer = new LeafletGeowiki({
+  geowikiAPI: doneData,
   styleFile: 'bauprojekte.yaml',
 }).addTo(map)
 

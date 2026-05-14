@@ -4,7 +4,11 @@ feature:
   style:
     color: red
     width: 3
+    pane: done
   title: |-
     <b><a target="_blank" href="{{ tags.url }}">{{ tags.name }}</a></b>
   body: |-
     Status: {{ tags.Status }}
+panes:
+  done:
+    zIndex: 402
