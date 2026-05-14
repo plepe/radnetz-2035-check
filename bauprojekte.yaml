@@ -1,0 +1,10 @@
+query:
+  0: (node;way;)
+feature:
+  style:
+    color: red
+    width: 3
+  title: |-
+    <b><a target="_blank" href="{{ tags.url }}">{{ tags.name }}</a></b>
+  body: |-
+    Status: {{ tags.Status }}

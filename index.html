@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="dist/style.css"/>
+  <script src="node_modules/leaflet/dist/leaflet.js"></script>
+  <style>
+#map { position: absolute; left: 0; right: 0; top: 0; bottom: 0 }
+#info { position: absolute; max-width: 10em; left: 1em; bottom: 1em; z-index: 1000; background: white; }
+#list { position: absolute; width: 20em; left: 1em; bottom: 5em; top: 5em; overflow-y: auto; z-index: 1000; background: white; }
+  </style>
+</head>
+<body>
+  <div id='map'></div>
+  <div id='info'></div>
+</body>
+  <script src="dist/app.js"></script>
+</html>

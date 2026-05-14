@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "build": "browserify -g browserify-css src/app.js -p esmify -o dist/app.js",
+    "prepare": "npm run build",
+    "watch": "watchify -g browserify-css --debug src/app.js -p esmify -o dist/app.js -v"
+  },
+  "dependencies": {
+    "@geowiki-net/leaflet-geowiki": "github:geowiki-net/leaflet-geowiki",
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.1",
+    "browserify-css": "^0.15.0",
+    "esmify": "^2.1.1",
+    "watchify": "^4.0.0"
+  }
+}
